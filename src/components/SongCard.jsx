@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-const SongCard = ({ song, i }) => {
-  const activeSong = "Test";
+const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
+  const handlePauseClick = () => {};
+
+  const handlePlayClick = () => {};
   return (
     <div
       className="flex flex-col w-[250px] p-4 bg-white/5
@@ -19,7 +21,11 @@ const SongCard = ({ song, i }) => {
           : "hidden"
       }`}
         >
-          <PlayPause />
+          <PlayPause
+            song={song}
+            handlePause={handlePauseClick}
+            handlePlay={handlePlayClick}
+          />
         </div>
         <img alt="song_img" src={song.images?.coverart} />
       </div>
