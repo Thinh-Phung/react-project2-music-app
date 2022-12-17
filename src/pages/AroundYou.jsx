@@ -20,7 +20,7 @@ const AroundYou = () => {
   }, [country]);
   if (isFetching && loading) return <Loader title="Loading songs around you" />;
   if (error && country) return <Error />;
-
+  console.log(error);
   return (
     <div className="flex flex-col">
       <h2
